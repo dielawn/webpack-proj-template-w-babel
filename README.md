@@ -29,3 +29,24 @@ Step 7: Test your build You can now test your build by opening the index.html fi
 Congratulations! You have successfully installed and set up Webpack for your project.
 Note: This is a basic setup to get you started with Webpack. As your project grows, you may need to configure additional loaders, plugins, or other features provided by Webpack to handle different file types and optimize your build process.# webpack-proj-template-w-babel
 # webpack-proj-template-w-babel
+Step 1: npm install --save-dev @babel/core @babel/preset-env
+Step 2: Create ‘.babelrc’ in root directory
+code .babelrc
+Step 3: Copy to .babelrc
+{
+"presets": ["@babel/preset-env"]
+}
+Step 4: npm install --save-dev babel-loader
+Step 5: Add to webpack.config.js
+module: {
+rules: [
+{
+test: /\.js$/,
+exclude: /node_modules/,
+use: {
+loader: 'babel-loader',
+},
+},
+],
+},
+npx webpack
